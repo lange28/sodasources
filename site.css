@@ -6,19 +6,26 @@ body {
     color: rgba(25, 2, 168, 0.85);
     margin: 30px 0px;
     padding: 0px;
-    text-align: center;
+    text-align: left;
 }
-.btn-primary {
-    background-color: #0074cc;
-    background-image: -moz-linear-gradient(top, #0088cc, #0055cc);
-    background-image: -ms-linear-gradient(top, #0088cc, #0055cc);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0055cc));
-    background-image: -webkit-linear-gradient(top, #0088cc, #0055cc);
-    background-image: -o-linear-gradient(top, #0088cc, #0055cc);
-    background-image: linear-gradient(top, #0088cc, #0055cc);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088cc', endColorstr='#0055cc', GradientType=0);
-    border-color: #0055cc #0055cc #003580;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+#container {
+    width: 600px;
+    height: 1500px;
+
+    padding: 15px;
+    border: 1px solid #333;
+    background-color: #eee;
+
+}
+.insert-coins{
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-left:15px;
+}
+.coin-push{
+    float: right;
+}
+#customer-field{
+    align-content: stretch;
 }

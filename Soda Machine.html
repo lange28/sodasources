@@ -9,7 +9,27 @@
 <body>
 <div id="container" ng-controller="TodoCtrl">
     <input type="image" name="sodabox" src="soda.jpg" width="400">
-    <input type="button" value="Изменить" id="btnjjj"  ng-click="click()"/>
+    <input type="button" value="Вернуть деньги"  ng-click="returnClick()">
+    <input type="button" value="COLA"   ng-click="buyClick()">
+    <input type="text" ng-model="vendorBalance" readonly="true" >
+    <div>
+        <div >
+            <input type="text" ng-model="custHalf" readonly="true" >
+            <input type="button" value="50¢" ng-click="coinHClick()">
+        </div>
+        <div>
+            <input type="text" ng-model="custQuar" readonly="true" >
+            <input type="button"  value="25¢" ng-click="coinQClick()">
+        </div>
+        <div>
+            <input type="text" ng-model="custNick" readonly="true" >
+            <input type="button"  value="5¢" ng-click="coinNClick()">
+        </div>
+        <div>
+            <input type="text" ng-model="custPen" readonly="true" >
+            <input type="button"  value="1¢" ng-click="coinPClick()">
+        </div>
+    </div>
 
 </div>
 </body>
