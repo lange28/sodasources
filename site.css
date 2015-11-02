@@ -15,8 +15,6 @@ body {
     border: 1px solid #333;
     background-color: #eee;
     margin: 0px auto;
-
-
 }
 
 .insert-coins{
@@ -29,9 +27,6 @@ body {
 .coin-push{
     width: 40px;
     margin-left: 15px;
-}
-#customer-field{
-    align-content: stretch;
 }
 
 #left-content {

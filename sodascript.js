@@ -51,7 +51,7 @@ function VendCtrl($scope){
         for (key in pepsiMachine.Money){
             if (Sum==0){break;}
             while(pepsiMachine.Money[key].count != 0) {
-                if (Math.floor(Sum / pepsiMachine.Money[key].value)) {
+                if (Math.floor(Sum / pepsiMachine.Money[key].value)!=0) {
                     customer.Money[key].count += 1;
                     pepsiMachine.Money[key].count -= 1;
                     Sum -= pepsiMachine.Money[key].value;
@@ -60,6 +60,7 @@ function VendCtrl($scope){
                 else{break;}
             }
         }
+
 
        update();
     };
@@ -105,6 +106,8 @@ function VendCtrl($scope){
             update();
         }
     }
+
+    // updating components
     function update() {
         $scope.vendorBalance = pepsiMachine.curentBalance.toFixed(2);
         $scope.custHalf = customer.Money.HALF_DOLLAR.count;
@@ -113,6 +116,8 @@ function VendCtrl($scope){
         $scope.custPen = customer.Money.PENNY.count;
 
     }
+
+    // Initialize objects and fill components
     var customer = new Customer();
     var pepsiMachine = new VendingMachine();
 
