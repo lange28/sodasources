@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script src="sodascript.js"></script>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="site.css" type="text/css" media="screen" />
 </head>
 <body>
-<div id="container">
-    <input type="image" name="sodabox" src="/soda.jpg" width="50">
-    <input type="button" value="Start/Stop" id="runBtn"  />
+<div id="container" ng-controller="TodoCtrl">
+    <input type="image" name="sodabox" src="soda.jpg" width="400">
+    <input type="button" value="Изменить" id="btnjjj"  ng-click="click()"/>
+
 </div>
 </body>
 </html>
