@@ -10,20 +10,43 @@ body {
 }
 #container {
     width: 600px;
-    height: 800px;
+    height: 600px;
     padding: 15px;
     border: 1px solid #333;
     background-color: #eee;
+    margin: 0px auto;
+
 
 }
+
 .insert-coins{
     width: 30px;
-    margin-left:15px;
+    margin-left: 5px;
+}
+.contrl-btn{
+    width: 100px;
 }
 .coin-push{
-    float: right;
-    align-content: stretch;
+    width: 40px;
+    margin-left: 15px;
 }
 #customer-field{
     align-content: stretch;
+}
+
+#left-content {
+    clear: left;
+    float: left;
+    width: 350px;
+    padding: 0.5em;
+    margin: 0;
+    display: inline;
+}
+#right-content {
+    float: right;
+    width:200px;
+    padding: 0.5em;
+    display: inline;
+    margin-top: 150px;
+
 }

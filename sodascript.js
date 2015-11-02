@@ -1,9 +1,15 @@
 /**
  * Created by lange_000 on 01.11.2015.
  */
+
+//Vending machine class
 function VendingMachine(){
-    this.SODAPRICE=0.3;
-    this.curentBalance = 0;
+
+    this.SODAPRICE=0.3; //Constant price for soda can
+
+    this.curentBalance = 0; //Amount of money inserted buy customer
+
+    //counting total amount of money function
     this.bank=function(){
         var sum=0;
         for (key in this.Money)
@@ -11,7 +17,9 @@ function VendingMachine(){
             sum +=this.Money[key].count * this.Money[key].value;
         }
         return sum;
-    }
+    };
+
+    //wallet object
     this.Money = {
         HALF_DOLLAR : {value : 0.50, count : 2},
         QUARTER : {value : 0.25, count : 2},
@@ -19,9 +27,11 @@ function VendingMachine(){
         PENNY : {value : 0.01, count : 2}
     }
 }
+//customer class
 function Customer(){
-    this.cash=0;
-    this.sodaBotles=0;
+    this.sodaBotles=0; //number of soda bottles owned
+
+    //wallet object
     this.Money = {
         HALF_DOLLAR : {value : 0.50, count : 4},
         QUARTER : {value : 0.25, count : 4},
@@ -30,21 +40,13 @@ function Customer(){
     }
 }
 
+//Angular controller for the app
 function VendCtrl($scope){
+
+    // returning and calculating the change
     $scope.returnClick= function(){
 
-        /*for (key in Sveta.Money)
-        {
-            //alert("Вот таких монеток: "+Sveta.Money[key].value+" аж штук- "+ Sveta.Money[key].count);
-            alert("Рыба moneys like that- "+Sveta.Money[key].value+" Sveta have got - "+ Sveta.Money[key].count);
-        }
-
-        for (key in Pepsico.Money)
-        {
-            //alert("Вот таких монеток: "+Sveta.Money[key].value+" аж штук- "+ Sveta.Money[key].count);
-            alert("moneys like that- "+Pepsico.Money[key].value+" Pepsico have got -"+ Pepsico.Money[key].count);
-        }*/
-
+        //Starting with the biggest value coin possible returning them to customer
         var Sum = pepsiMachine.curentBalance.toFixed(2);
         for (key in pepsiMachine.Money){
             if (Sum==0){break;}
@@ -62,6 +64,7 @@ function VendCtrl($scope){
        update();
     };
 
+    //button handlers
     $scope.coinHClick = function(){
         if (customer.Money.HALF_DOLLAR.count > 0) {
             pepsiMachine.Money.HALF_DOLLAR.count += 1;
@@ -103,7 +106,7 @@ function VendCtrl($scope){
         }
     }
     function update() {
-        $scope.vendorBalance = pepsiMachine.curentBalance.toFixed(2)+"$";
+        $scope.vendorBalance = pepsiMachine.curentBalance.toFixed(2);
         $scope.custHalf = customer.Money.HALF_DOLLAR.count;
         $scope.custQuar = customer.Money.QUARTER.count;
         $scope.custNick = customer.Money.NICKEL.count;
@@ -114,7 +117,7 @@ function VendCtrl($scope){
     var pepsiMachine = new VendingMachine();
 
 
-    $scope.vendorBalance = pepsiMachine.curentBalance.toFixed(2)+"$";
+    $scope.vendorBalance = pepsiMachine.curentBalance.toFixed(2);
     $scope.custHalf = customer.Money.HALF_DOLLAR.count;
     $scope.custQuar = customer.Money.QUARTER.count;
     $scope.custNick = customer.Money.NICKEL.count;

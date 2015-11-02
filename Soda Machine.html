@@ -8,30 +8,33 @@
 </head>
 <body>
 <div id="container" ng-controller="VendCtrl">
-    <input type="image" name="sodabox" src="soda.jpg" width="400">
-    <input type="button" value="Return change"  ng-click="returnClick()">
-    <input type="button" value="Buy soda"   ng-click="buyClick()">
-    <span>Current balance: </span><input type="text" ng-model="vendorBalance" readonly="true" class="insert-coins">
+    <div id="left-content">
+        <input type="image" name="sodabox" src="soda.jpg" width="350">
+    </div>
+    <div id="right-content">
+    <input type="button" value="Return change"  ng-click="returnClick()" class="contrl-btn"><br><br>
+    <input type="button" value="Buy soda"   ng-click="buyClick()" class="contrl-btn"><br><br>
+    <span>Current balance: </span><input type="text" ng-model="vendorBalance" readonly="true" class="insert-coins"><br><br>
     <div>
-        <span>Customer wallet: </span>
+        <span>Customer wallet: </span><br><br>
         <div >
             <input type="text" ng-model="custHalf" readonly="true" class="insert-coins">
-            <input type="button" value="50¢" ng-click="coinHClick()">
+            <input type="button" value="50¢" ng-click="coinHClick()" class="coin-push">
         </div>
         <div>
             <input type="text" ng-model="custQuar" readonly="true"  class="insert-coins">
-            <input type="button"  value="25¢" ng-click="coinQClick()">
+            <input type="button"  value="25¢" ng-click="coinQClick()" class="coin-push">
         </div>
         <div>
             <input type="text" ng-model="custNick" readonly="true"  class="insert-coins">
-            <input type="button"  value="5¢" ng-click="coinNClick()">
+            <input type="button"  value="5¢" ng-click="coinNClick()" class="coin-push">
         </div>
         <div>
             <input type="text" ng-model="custPen" readonly="true"  class="insert-coins">
-            <input type="button"  value="1¢" ng-click="coinPClick()">
+            <input type="button"  value="1¢" ng-click="coinPClick()" class="coin-push">
         </div>
     </div>
-
+    </div>
 </div>
 </body>
 </html>
