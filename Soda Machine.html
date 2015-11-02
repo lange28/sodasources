@@ -7,26 +7,27 @@
     <link rel="stylesheet" href="site.css" type="text/css" media="screen" />
 </head>
 <body>
-<div id="container" ng-controller="TodoCtrl">
+<div id="container" ng-controller="VendCtrl">
     <input type="image" name="sodabox" src="soda.jpg" width="400">
-    <input type="button" value="Вернуть деньги"  ng-click="returnClick()">
-    <input type="button" value="COLA"   ng-click="buyClick()">
-    <input type="text" ng-model="vendorBalance" readonly="true" >
+    <input type="button" value="Return change"  ng-click="returnClick()">
+    <input type="button" value="Buy soda"   ng-click="buyClick()">
+    <span>Current balance: </span><input type="text" ng-model="vendorBalance" readonly="true" class="insert-coins">
     <div>
+        <span>Customer wallet: </span>
         <div >
-            <input type="text" ng-model="custHalf" readonly="true" >
+            <input type="text" ng-model="custHalf" readonly="true" class="insert-coins">
             <input type="button" value="50¢" ng-click="coinHClick()">
         </div>
         <div>
-            <input type="text" ng-model="custQuar" readonly="true" >
+            <input type="text" ng-model="custQuar" readonly="true"  class="insert-coins">
             <input type="button"  value="25¢" ng-click="coinQClick()">
         </div>
         <div>
-            <input type="text" ng-model="custNick" readonly="true" >
+            <input type="text" ng-model="custNick" readonly="true"  class="insert-coins">
             <input type="button"  value="5¢" ng-click="coinNClick()">
         </div>
         <div>
-            <input type="text" ng-model="custPen" readonly="true" >
+            <input type="text" ng-model="custPen" readonly="true"  class="insert-coins">
             <input type="button"  value="1¢" ng-click="coinPClick()">
         </div>
     </div>

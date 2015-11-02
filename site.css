@@ -10,8 +10,7 @@ body {
 }
 #container {
     width: 600px;
-    height: 1500px;
-
+    height: 800px;
     padding: 15px;
     border: 1px solid #333;
     background-color: #eee;
@@ -19,12 +18,11 @@ body {
 }
 .insert-coins{
     width: 30px;
-    height: 30px;
-    float: right;
     margin-left:15px;
 }
 .coin-push{
     float: right;
+    align-content: stretch;
 }
 #customer-field{
     align-content: stretch;

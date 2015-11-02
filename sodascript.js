@@ -1,9 +1,8 @@
 /**
  * Created by lange_000 on 01.11.2015.
  */
-//(function(){
 function VendingMachine(){
-    this.SODAPRICE=30;
+    this.SODAPRICE=0.3;
     this.curentBalance = 0;
     this.bank=function(){
         var sum=0;
@@ -31,7 +30,7 @@ function Customer(){
     }
 }
 
-function TodoCtrl($scope){
+function VendCtrl($scope){
     $scope.returnClick= function(){
 
         /*for (key in Sveta.Money)
@@ -46,20 +45,21 @@ function TodoCtrl($scope){
             alert("moneys like that- "+Pepsico.Money[key].value+" Pepsico have got -"+ Pepsico.Money[key].count);
         }*/
 
-        var Sum=pepsiMachine.curentBalance.toFixed(2);
+        var Sum = pepsiMachine.curentBalance.toFixed(2);
         for (key in pepsiMachine.Money){
             if (Sum==0){break;}
             while(pepsiMachine.Money[key].count != 0) {
                 if (Math.floor(Sum / pepsiMachine.Money[key].value)) {
                     customer.Money[key].count += 1;
-                    customer.Money[key].count -= 1;
+                    pepsiMachine.Money[key].count -= 1;
                     Sum -= pepsiMachine.Money[key].value;
+                    pepsiMachine.curentBalance -= pepsiMachine.Money[key].value;
                 }
                 else{break;}
             }
         }
 
-       // update();
+       update();
     };
 
     $scope.coinHClick = function(){
@@ -96,8 +96,8 @@ function TodoCtrl($scope){
         update();
     };
     $scope.buyClick = function(){
-        if (pepsiMachine.curentBalance >= 0.3) {
-            pepsiMachine.curentBalance -= 0.3;
+        if (pepsiMachine.curentBalance >= pepsiMachine.SODAPRICE) {
+            pepsiMachine.curentBalance -= pepsiMachine.SODAPRICE;
             customer.sodaBotles += 1;
             update();
         }
@@ -113,7 +113,14 @@ function TodoCtrl($scope){
     var customer = new Customer();
     var pepsiMachine = new VendingMachine();
 
+
+    $scope.vendorBalance = pepsiMachine.curentBalance.toFixed(2)+"$";
+    $scope.custHalf = customer.Money.HALF_DOLLAR.count;
+    $scope.custQuar = customer.Money.QUARTER.count;
+    $scope.custNick = customer.Money.NICKEL.count;
+    $scope.custPen = customer.Money.PENNY.count;
+
+
 }
 
 
-//}());
